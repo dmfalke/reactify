@@ -92,7 +92,9 @@ module.exports = function(file, options) {
       source = transform(typeSyntax.visitorList, source, transformOptions).code;
     }
 
-    return transform(transformVisitors, source, transformOptions).code;
+    var code = transform(transformVisitors, source, transformOptions).code;
+    console.log(code);
+    return code;
   }
 
   return process(file, isJSXFile, transformer);
